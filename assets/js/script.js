@@ -1,5 +1,5 @@
-let currentTimeDoc = document.getElementById('currentTime');
-let currentDateDOc = document.getElementById('currentDate');
+const currentTimeDoc = document.getElementById('currentTime');
+const currentDateDOc = document.getElementById('currentDate');
 
 const weekday = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
 const monthNames = ["January", "February", "March", "April", "May", "June",
@@ -10,8 +10,6 @@ let dayOfWeek = weekday[today.getDay()];
 let currentMonth = monthNames[today.getMonth()];
 currentTime = today.getHours() + ":" + today.getMinutes();
 currentDate = dayOfWeek + ", " + today.getDate() + " " + currentMonth;
-
-// alert(currentTimeDoc);
 
 currentTimeDoc.textContent = currentTime;
 currentDateDOc.textContent = currentDate;
