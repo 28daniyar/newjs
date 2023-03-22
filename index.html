@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <script src="https://kit.fontawesome.com/b5d35d771e.js" crossorigin="anonymous"></script>
+    <script src="assets/js/script.js" defer></script>
+    <title>My HW #2</title>
+</head>
+
+<body>
+
+    <div class="wrapper">
+        <button class="btn" id="myButton">Start animation</button>
+        <div id="dvd-logo">
+            <img src="assets/images/dvd.png" class="dvd-logo-img" id="logo" alt="">
+        </div>
+
+        <audio id="myAudio" class="active" controls loop>
+            <source src="assets/audio/audio.mp3" type="audio/mpeg">
+        </audio>
+    </div>
+
+</body>
+
+<script>
+
+	const myButton = document.getElementById("myButton");
+    const dvdLogo = document.getElementById("dvd-logo");
+    const myAudio = document.getElementById("myAudio");
+
+    myButton.addEventListener("click", function() {
+        myButton.style.display = "none";
+        dvdLogo.classList.add('myanimation');
+
+
+
+        const intervalId = window.setInterval(function() {
+            const rect = dvdLogo.getBoundingClientRect();
+            if(rect.left == 0  && rect.top == 0) {
+                // myAudio.currentTime = 0;
+                myAudio.play();  
+                // alert('test');
+            }
+        }, 1);
+        
+    });
+
+
+
+</script>
+
+
+</html>
